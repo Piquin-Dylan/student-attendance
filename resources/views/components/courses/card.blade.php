@@ -1,5 +1,5 @@
 @props(['course'])
-<a href="" class="card card--link course-card">
+<a href="{{route('courses.show',$course->id)}}" class="card card--link course-card">
     <div class="course-card__header">
         <div class="course-card__icon-wrap" aria-hidden="true">
             <svg class="course-card__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
