@@ -3,7 +3,7 @@
 use App\Http\Controllers\CourseController;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'home', ['title' => 'Gestion des présences'])
+Route::view('/vfdvfd', 'home', ['title' => 'Gestion des présences'])
     ->name('home');
 Route::middleware('auth')->group(function () {
     Route::get('/courses', [CourseController::class, 'index'])
