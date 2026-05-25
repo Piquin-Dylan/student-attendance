@@ -54,10 +54,11 @@ class DatabaseSeeder extends Seeder
                 'user_id' => $daniel->id,
             ]);
 
-        $students = require __DIR__.'/data/students.php';
+        $students = require __DIR__ . '/data/students.php';
         foreach ($students as $student) {
-            Student::create($student);
+            $studentId = Student::create($student);
+            Course::first()->students()->attach($studentId->id);
         }
-        Course::first()->students()->attach([1, 2, 3]);
+
     }
 }
