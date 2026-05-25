@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\Lesson;
 use function auth;
 use function compact;
 use function view;
@@ -23,12 +24,12 @@ class CourseController extends Controller
         );
     }
 
-    public function show(Course $course)
+    public function show(Course $course, Lesson $lesson)
     {
         $title = $course->name;
         return view(
             'courses.show',
-            compact('course', 'title')
+            compact('course', 'lesson', 'title')
         );
     }
 }

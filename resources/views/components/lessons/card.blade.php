@@ -5,19 +5,28 @@
     <h3 class="lesson-card__title">Analyse complexe</h3>
     <div class="lesson-card__details">
         <span class="lesson-card__detail">
-            <x-svg.calendar />
-            {{-- {{ $lesson->date->isoFormat('dddd D MMMM') }} --}}
+            <x-svg.calendar/>
+{{--
+          {{$lesson->date->isoFormat('dddd D MMMM') }}
+--}}
+{{--
             mardi 21 avril
+--}}
         </span>
         <span class="lesson-card__detail">
-            <x-svg.clock />
-            {{-- {{ $lesson->start_time }} - {{ $lesson->end_time }} --}}
+            <x-svg.clock/>
+         {{ $lesson->starts_at }} - {{ $lesson->ends_at }}
+{{--
             14:00 - 16:00
+--}}
         </span>
         <span class="lesson-card__detail">
-            <x-svg.room />
-            {{-- {{ $lesson->room }} --}}
+            <x-svg.room/>
+{{--
+            {{ $lesson->room }}
+--}}
             Salle A301
+
         </span>
     </div>
 </a>
