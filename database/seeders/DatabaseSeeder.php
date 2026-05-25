@@ -56,8 +56,13 @@ class DatabaseSeeder extends Seeder
 
         $students = require __DIR__ . '/data/students.php';
         foreach ($students as $student) {
-            $studentId = Student::create($student);
-            Course::first()->students()->attach($studentId->id);
+            $createdStudent = Student::create($student);
+
+            $createdStudent->courses()->attach([
+                $pw->id,
+                $dcs->id,
+                $mmi->id,
+            ]);
         }
 
     }
